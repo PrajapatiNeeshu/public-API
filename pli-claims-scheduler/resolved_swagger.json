@@ -1,0 +1,9 @@
+{
+  "info": {
+    "description": "Cron service: it exposes no HTTP API to document.",
+    "title": "PLI Claims Scheduler",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {}
+}

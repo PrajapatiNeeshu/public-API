@@ -1,0 +1,11 @@
+{
+  "app": "pliproductmaster-backend",
+  "source_project": "pli/pliproductmaster-backend",
+  "source_branch": "release",
+  "source_commit": "5836e1c899dd96c009ee45244be1ded440d320cd",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/pliproductmaster-backend/-/pipelines/9353"
+}

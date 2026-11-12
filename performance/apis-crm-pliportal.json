@@ -1,0 +1,6524 @@
+{
+  "suite": "crm-pliportal-backend-all-gets",
+  "service": "crm-pliportal-backend",
+  "source": "crm-pliportal-backend/staging/resolved_swagger.json",
+  "filter": "ALL GET (public + private); POST deferred",
+  "count": 296,
+  "getCount": 252,
+  "postCount": 44,
+  "publicGetCount": 20,
+  "privateGetCount": 232,
+  "notes": [
+    "All CRM GET APIs from staging swagger (public + private).",
+    "Private GETs (xPublic=false) set xTokenRequired=true — runner sends AUTH_TOKEN Bearer.",
+    "Public GETs keep xTokenRequired=false.",
+    "POSTs remain enabled=false until payloads provided.",
+    "Test path/query data from staging.env.json CRM_TEST_DATA / CRM_TEST_CUSTOMERS."
+  ],
+  "apis": [
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Employee / Advisor Details (bepis)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/advisor-emp-details/{employee_id}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "employee_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Employee / Advisor Details (bepis) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/advisor-emp-details/{employee_id}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "employee_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Bank by IFSC (bebankreconciliation) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/cddo-bankmaster/{ifsc_code}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "20",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ifsc_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List CPC Applications (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/cpc/applications",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "skip",
+        "limit",
+        "orderBy",
+        "sortType",
+        "status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get CPC Application By ID (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/cpc/applications/{id}",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by ID (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/{customer_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Photo (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/{customer_id}/photo",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Customer Requests (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/{customer_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Mobile (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/mobile/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Customer ID by Mobile (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/mobile/send-id/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Policy Requests (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/policy/{policy_number}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Profile Summary by Customer_id (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/profile/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/{request_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Documents (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/{request_id}/documents",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Receipt PDF (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/{request_id}/receipt",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Timeline (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/{request_id}/timeline",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail by Ticket Number (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/ticket/{ticket_number}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Letter Generation Data by Ticket Number (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/requests/ticket/{ticket_number}/letter",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Request ID (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customer/search/{request_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Workflow Status (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/customers/workflows/{workflow_id}/status",
+      "tags": [
+        "CustomerOnboarding"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "workflow_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Deductor (TAN) by Office (betaxation) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/deductor/by-office",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Stream ECMS Document (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/documents/{document_id}/stream-ecms",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List ECMS Documents (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/documents/ecms-list",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_id",
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download From Minio (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/documents/minio/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "folder_path",
+        "file_name"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List System Documents (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/documents/system",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download System Document (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/documents/system/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id,omitempty",
+        "user_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get e-NACH Mandate (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/enach/mandate/{ref_no}",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ref_no"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List e-NACH Mandates (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/enach/mandates",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "customer_id"
+      ],
+      "queryOptional": [
+        "status",
+        "policy_number",
+        "registered_only",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List HO Office Requests (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/ho-office/{ho_office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ho_office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Address Types (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/address-types",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Channels (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/channels",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Document Types (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/document-types/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Offices (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/offices",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "type",
+        "circle_code"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Validate Pincode (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/pincode/{pincode}/validate",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "pincode"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "state"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Salutations (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/salutations",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List States (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/states",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "active_only"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Status Reasons (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/lookup/status-reasons",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "action_type"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Policy Assignment Status (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/assignment/{request_id}/status",
+      "tags": [
+        "Assignment"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Billing Change Status (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/billing-change/{request_id}/status",
+      "tags": [
+        "BillingChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Search Merge Candidates (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/cid-merge/candidates",
+      "tags": [
+        "CIDMerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "primary_customer_id"
+      ],
+      "queryOptional": [
+        "query",
+        "by"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Merged List for Unmerge (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/cid-unmerge/merged-list/{customer_id}",
+      "tags": [
+        "CIDUnmerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id",
+        "primary_customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Work Queue (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/cpc/queue",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "sla_status",
+        "assigned_to",
+        "office_id",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Queue Stats (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/cpc/queue/stats",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC SLA Dashboard (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/cpc/sla-dashboard",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id",
+        "sla_status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Document Metadata (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/documents/{document_id}",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download Document (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/documents/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Form 121 Declaration (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/form-121/{request_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Missing Documents (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/requests/{request_id}/missing-documents",
+      "tags": [
+        "NameChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Duplicate Request Check (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/nfs/validate/duplicate-check/{customer_id}/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id",
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Details (beimspolicyissue) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/office",
+      "tags": [
+        "PolicyIssueOffice"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Office Requests (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/office/{office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Offices by Pincode (bemasterdata) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/offices/limited-details",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [
+        "office-type",
+        "skip",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Head Office by Pincode (bemasterdata) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/offices/pincode-ho",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Urban/Rural (bemasterdata) (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/offices2/urban-rural",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "office-id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Summary by Policy Number (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/policy/{policy_number}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details by Customer_id (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/policy/customer-mapping/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details with Customer Info by Customer_id (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/policy/customer-mapping/{customer_id}/details",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Policy Number (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/policy/customer-mapping/policy/{policy_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get My Policies (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/policy/customer/{customer_id}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Portal My CIDs (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/portal/cid/my-cids",
+      "tags": [
+        "PortalCID"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Agent UIN (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/tds/uin/agent/{agent_code}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "agent_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Check UIN by PAN and Office ID (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/tds/uin/check",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "pan",
+        "office_id"
+      ],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer UIN (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/tds/uin/customer/{customer_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy UIN (AP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ap/tds/uin/policy/{policy_number}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Bank by IFSC (bebankreconciliation)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cddo-bankmaster/{ifsc_code}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "20",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ifsc_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Employee / Advisor Details (bepis) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/advisor-emp-details/{employee_id}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "employee_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Bank by IFSC (bebankreconciliation) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/cddo-bankmaster/{ifsc_code}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "20",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ifsc_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List CPC Applications (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/cpc/applications",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "skip",
+        "limit",
+        "orderBy",
+        "sortType",
+        "status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get CPC Application By ID (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/cpc/applications/{id}",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by ID (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/{customer_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Photo (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/{customer_id}/photo",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Customer Requests (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/{customer_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Mobile (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/mobile/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Customer ID by Mobile (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/mobile/send-id/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Policy Requests (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/policy/{policy_number}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Profile Summary by Customer_id (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/profile/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/{request_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Documents (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/{request_id}/documents",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Receipt PDF (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/{request_id}/receipt",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Timeline (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/{request_id}/timeline",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail by Ticket Number (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/ticket/{ticket_number}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Letter Generation Data by Ticket Number (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/requests/ticket/{ticket_number}/letter",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Request ID (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customer/search/{request_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Workflow Status (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/customers/workflows/{workflow_id}/status",
+      "tags": [
+        "CustomerOnboarding"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "workflow_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Deductor (TAN) by Office (betaxation) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/deductor/by-office",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Stream ECMS Document (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/documents/{document_id}/stream-ecms",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List ECMS Documents (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/documents/ecms-list",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_id",
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download From Minio (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/documents/minio/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "folder_path",
+        "file_name"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List System Documents (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/documents/system",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download System Document (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/documents/system/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id,omitempty",
+        "user_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get e-NACH Mandate (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/enach/mandate/{ref_no}",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ref_no"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List e-NACH Mandates (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/enach/mandates",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "customer_id"
+      ],
+      "queryOptional": [
+        "status",
+        "policy_number",
+        "registered_only",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List HO Office Requests (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/ho-office/{ho_office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ho_office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Address Types (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/address-types",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Channels (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/channels",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Document Types (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/document-types/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Offices (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/offices",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "type",
+        "circle_code"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Validate Pincode (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/pincode/{pincode}/validate",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "pincode"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "state"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Salutations (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/salutations",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List States (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/states",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "active_only"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Status Reasons (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/lookup/status-reasons",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "action_type"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Policy Assignment Status (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/assignment/{request_id}/status",
+      "tags": [
+        "Assignment"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Billing Change Status (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/billing-change/{request_id}/status",
+      "tags": [
+        "BillingChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Search Merge Candidates (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/cid-merge/candidates",
+      "tags": [
+        "CIDMerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "primary_customer_id"
+      ],
+      "queryOptional": [
+        "query",
+        "by"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Merged List for Unmerge (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/cid-unmerge/merged-list/{customer_id}",
+      "tags": [
+        "CIDUnmerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id",
+        "primary_customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Work Queue (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/cpc/queue",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "sla_status",
+        "assigned_to",
+        "office_id",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Queue Stats (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/cpc/queue/stats",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC SLA Dashboard (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/cpc/sla-dashboard",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id",
+        "sla_status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Document Metadata (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/documents/{document_id}",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download Document (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/documents/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Form 121 Declaration (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/form-121/{request_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Missing Documents (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/requests/{request_id}/missing-documents",
+      "tags": [
+        "NameChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Duplicate Request Check (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/nfs/validate/duplicate-check/{customer_id}/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id",
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Details (beimspolicyissue) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/office",
+      "tags": [
+        "PolicyIssueOffice"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Office Requests (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/office/{office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Offices by Pincode (bemasterdata) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/offices/limited-details",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [
+        "office-type",
+        "skip",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Head Office by Pincode (bemasterdata) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/offices/pincode-ho",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Urban/Rural (bemasterdata) (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/offices2/urban-rural",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "office-id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Summary by Policy Number (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/policy/{policy_number}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details by Customer_id (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/policy/customer-mapping/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details with Customer Info by Customer_id (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/policy/customer-mapping/{customer_id}/details",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Policy Number (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/policy/customer-mapping/policy/{policy_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get My Policies (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/policy/customer/{customer_id}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Portal My CIDs (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/portal/cid/my-cids",
+      "tags": [
+        "PortalCID"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Agent UIN (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/tds/uin/agent/{agent_code}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "agent_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Check UIN by PAN and Office ID (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/tds/uin/check",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "pan",
+        "office_id"
+      ],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer UIN (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/tds/uin/customer/{customer_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy UIN (CG)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cg/tds/uin/policy/{policy_number}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Employee / Advisor Details (bepis) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/advisor-emp-details/{employee_id}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "employee_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Bank by IFSC (bebankreconciliation) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/cddo-bankmaster/{ifsc_code}",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "20",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ifsc_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List CPC Applications (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/cpc/applications",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "skip",
+        "limit",
+        "orderBy",
+        "sortType",
+        "status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get CPC Application By ID (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/cpc/applications/{id}",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by ID (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/{customer_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Photo (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/{customer_id}/photo",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Customer Requests (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/{customer_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Mobile (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/mobile/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Customer ID by Mobile (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/mobile/send-id/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Policy Requests (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/policy/{policy_number}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Profile Summary by Customer_id (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/profile/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/{request_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Documents (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/{request_id}/documents",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Receipt PDF (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/{request_id}/receipt",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Timeline (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/{request_id}/timeline",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail by Ticket Number (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/ticket/{ticket_number}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Letter Generation Data by Ticket Number (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/requests/ticket/{ticket_number}/letter",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Request ID (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customer/search/{request_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Workflow Status (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/customers/workflows/{workflow_id}/status",
+      "tags": [
+        "CustomerOnboarding"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "workflow_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Deductor (TAN) by Office (betaxation) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/deductor/by-office",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Stream ECMS Document (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/documents/{document_id}/stream-ecms",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List ECMS Documents (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/documents/ecms-list",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_id",
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download From Minio (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/documents/minio/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "folder_path",
+        "file_name"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List System Documents (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/documents/system",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download System Document (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/documents/system/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id,omitempty",
+        "user_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get e-NACH Mandate (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/enach/mandate/{ref_no}",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ref_no"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List e-NACH Mandates (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/enach/mandates",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "customer_id"
+      ],
+      "queryOptional": [
+        "status",
+        "policy_number",
+        "registered_only",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List HO Office Requests (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/ho-office/{ho_office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ho_office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Address Types (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/address-types",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Channels (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/channels",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Document Types (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/document-types/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Offices (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/offices",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "type",
+        "circle_code"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Validate Pincode (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/pincode/{pincode}/validate",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "pincode"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "state"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Salutations (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/salutations",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List States (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/states",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "active_only"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Status Reasons (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/lookup/status-reasons",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "action_type"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Policy Assignment Status (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/assignment/{request_id}/status",
+      "tags": [
+        "Assignment"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Billing Change Status (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/billing-change/{request_id}/status",
+      "tags": [
+        "BillingChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Search Merge Candidates (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/cid-merge/candidates",
+      "tags": [
+        "CIDMerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "primary_customer_id"
+      ],
+      "queryOptional": [
+        "query",
+        "by"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Merged List for Unmerge (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/cid-unmerge/merged-list/{customer_id}",
+      "tags": [
+        "CIDUnmerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id",
+        "primary_customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Work Queue (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/cpc/queue",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "sla_status",
+        "assigned_to",
+        "office_id",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Queue Stats (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/cpc/queue/stats",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC SLA Dashboard (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/cpc/sla-dashboard",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id",
+        "sla_status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Document Metadata (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/documents/{document_id}",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download Document (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/documents/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Form 121 Declaration (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/form-121/{request_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Missing Documents (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/requests/{request_id}/missing-documents",
+      "tags": [
+        "NameChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Duplicate Request Check (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/nfs/validate/duplicate-check/{customer_id}/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id",
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Details (beimspolicyissue) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/office",
+      "tags": [
+        "PolicyIssueOffice"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Office Requests (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/office/{office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Offices by Pincode (bemasterdata) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/offices/limited-details",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [
+        "office-type",
+        "skip",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Head Office by Pincode (bemasterdata) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/offices/pincode-ho",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Urban/Rural (bemasterdata) (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/offices2/urban-rural",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "office-id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Summary by Policy Number (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/policy/{policy_number}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details by Customer_id (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/policy/customer-mapping/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details with Customer Info by Customer_id (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/policy/customer-mapping/{customer_id}/details",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Policy Number (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/policy/customer-mapping/policy/{policy_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get My Policies (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/policy/customer/{customer_id}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Portal My CIDs (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/portal/cid/my-cids",
+      "tags": [
+        "PortalCID"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Agent UIN (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/tds/uin/agent/{agent_code}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "agent_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Check UIN by PAN and Office ID (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/tds/uin/check",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "pan",
+        "office_id"
+      ],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer UIN (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/tds/uin/customer/{customer_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy UIN (CP)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cp/tds/uin/policy/{policy_number}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List CPC Applications",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cpc/applications",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "skip",
+        "limit",
+        "orderBy",
+        "sortType",
+        "status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get CPC Application By ID",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/cpc/applications/{id}",
+      "tags": [
+        "CPCApplications"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by ID",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/{customer_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Photo",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/{customer_id}/photo",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Customer Requests",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/{customer_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Mobile",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/mobile/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Customer ID by Mobile",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/mobile/send-id/{mobile_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "mobile_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Policy Requests",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/policy/{policy_number}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_type",
+        "status",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer Profile Summary by Customer_id",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/profile/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/{request_id}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Documents",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/{request_id}/documents",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Receipt PDF",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/{request_id}/receipt",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Timeline",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/{request_id}/timeline",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Request Detail by Ticket Number",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/ticket/{ticket_number}",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "include_documents",
+        "include_audit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Letter Generation Data by Ticket Number",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/requests/ticket/{ticket_number}/letter",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ticket_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Request ID",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customer/search/{request_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Workflow Status",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/customers/workflows/{workflow_id}/status",
+      "tags": [
+        "CustomerOnboarding"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "workflow_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Deductor (TAN) by Office (betaxation)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/deductor/by-office",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Stream ECMS Document",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/documents/{document_id}/stream-ecms",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List ECMS Documents",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/documents/ecms-list",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "request_id",
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download From Minio",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/documents/minio/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "folder_path",
+        "file_name"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List System Documents",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/documents/system",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download System Document",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/documents/system/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id,omitempty",
+        "user_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get e-NACH Mandate",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/enach/mandate/{ref_no}",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ref_no"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List e-NACH Mandates",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/enach/mandates",
+      "tags": [
+        "Enach"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "customer_id"
+      ],
+      "queryOptional": [
+        "status",
+        "policy_number",
+        "registered_only",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List HO Office Requests",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/ho-office/{ho_office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "ho_office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Address Types",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/address-types",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Channels",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/channels",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Document Types",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/document-types/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Offices",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/offices",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "type",
+        "circle_code"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Validate Pincode",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/pincode/{pincode}/validate",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "pincode"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "state"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Salutations",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/salutations",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List States",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/states",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "active_only"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Status Reasons",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/lookup/status-reasons",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "action_type"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Policy Assignment Status",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/assignment/{request_id}/status",
+      "tags": [
+        "Assignment"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Billing Change Status",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/billing-change/{request_id}/status",
+      "tags": [
+        "BillingChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Search Merge Candidates",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/cid-merge/candidates",
+      "tags": [
+        "CIDMerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "primary_customer_id"
+      ],
+      "queryOptional": [
+        "query",
+        "by"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Merged List for Unmerge",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/cid-unmerge/merged-list/{customer_id}",
+      "tags": [
+        "CIDUnmerge"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id",
+        "primary_customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Work Queue",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/cpc/queue",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "sla_status",
+        "assigned_to",
+        "office_id",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC Queue Stats",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/cpc/queue/stats",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "CPC SLA Dashboard",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/cpc/sla-dashboard",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "office_id",
+        "sla_status"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Document Metadata",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/documents/{document_id}",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Download Document",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/documents/{document_id}/download",
+      "tags": [
+        "Document"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "document_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Form 121 Declaration",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/form-121/{request_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Missing Documents",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/requests/{request_id}/missing-documents",
+      "tags": [
+        "NameChange"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "request_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Duplicate Request Check",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/nfs/validate/duplicate-check/{customer_id}/{request_type}",
+      "tags": [
+        "Lookup"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id",
+        "request_type"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Details (beimspolicyissue)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/office",
+      "tags": [
+        "PolicyIssueOffice"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "office_id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "List Office Requests",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/office/{office_id}/requests",
+      "tags": [
+        "Status"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "office_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "status",
+        "request_type",
+        "page",
+        "page_size"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Offices by Pincode (bemasterdata)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/offices/limited-details",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [
+        "office-type",
+        "skip",
+        "limit"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Head Office by Pincode (bemasterdata)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/offices/pincode-ho",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "pincode"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Office Urban/Rural (bemasterdata)",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/offices2/urban-rural",
+      "tags": [
+        "MasterDataProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "20",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "office-id"
+      ],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Summary by Policy Number",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/policy/{policy_number}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details by Customer_id",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/policy/customer-mapping/{customer_id}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy Details with Customer Info by Customer_id",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/policy/customer-mapping/{customer_id}/details",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer by Policy Number",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/policy/customer-mapping/policy/{policy_number}",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get My Policies",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/policy/customer/{customer_id}/summary",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Portal My CIDs",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/portal/cid/my-cids",
+      "tags": [
+        "PortalCID"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "customer_id"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Agent UIN",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/tds/uin/agent/{agent_code}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "agent_code"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Check UIN by PAN and Office ID",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/tds/uin/check",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [],
+      "queryRequired": [
+        "pan",
+        "office_id"
+      ],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Customer UIN",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/tds/uin/customer/{customer_id}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "customer_id"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Get Policy UIN",
+      "operationId": null,
+      "method": "GET",
+      "path": "/becrmpliportal/v1/tds/uin/policy/{policy_number}",
+      "tags": [
+        "Form121"
+      ],
+      "xPublic": false,
+      "xRateLimit": "1000",
+      "xTokenRequired": true,
+      "pathParams": [
+        "policy_number"
+      ],
+      "queryRequired": [],
+      "queryOptional": [
+        "tax_year"
+      ],
+      "hasRequestBody": false,
+      "expectedStatus": 200,
+      "enabled": true
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Policy for Registration (beimspolicymgmt) (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/common/policies/verify",
+      "tags": [
+        "PolicyVerifyProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Capture customer lead (no OTP) (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/lead",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer lead capture (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/lead/otp/request",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify OTP and capture customer lead (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/lead/otp/verify",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/search/mobile/request-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/search/mobile/verify-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer Details (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/verify",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer OTP (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/customer/verify-otp",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Generic OTP (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/otp/send",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Generic OTP (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/otp/verify",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "otp"
+      ],
+      "queryOptional": [
+        "mobile_number",
+        "request_id",
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "PMTGW Payment Callback (AP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/ap/payment/callback",
+      "tags": [
+        "Payment"
+      ],
+      "xPublic": true,
+      "xRateLimit": "1000",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Policy for Registration (beimspolicymgmt) (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/common/policies/verify",
+      "tags": [
+        "PolicyVerifyProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Capture customer lead (no OTP) (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/lead",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer lead capture (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/lead/otp/request",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify OTP and capture customer lead (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/lead/otp/verify",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/search/mobile/request-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/search/mobile/verify-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer Details (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/verify",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer OTP (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/customer/verify-otp",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Generic OTP (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/otp/send",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Generic OTP (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/otp/verify",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "otp"
+      ],
+      "queryOptional": [
+        "mobile_number",
+        "request_id",
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "PMTGW Payment Callback (CG)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cg/payment/callback",
+      "tags": [
+        "Payment"
+      ],
+      "xPublic": true,
+      "xRateLimit": "1000",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Policy for Registration (beimspolicymgmt)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/common/policies/verify",
+      "tags": [
+        "PolicyVerifyProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Policy for Registration (beimspolicymgmt) (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/common/policies/verify",
+      "tags": [
+        "PolicyVerifyProxy"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Capture customer lead (no OTP) (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/lead",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer lead capture (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/lead/otp/request",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify OTP and capture customer lead (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/lead/otp/verify",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/search/mobile/request-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/search/mobile/verify-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer Details (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/verify",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer OTP (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/customer/verify-otp",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Generic OTP (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/otp/send",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Generic OTP (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/otp/verify",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "otp"
+      ],
+      "queryOptional": [
+        "mobile_number",
+        "request_id",
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "PMTGW Payment Callback (CP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/cp/payment/callback",
+      "tags": [
+        "Payment"
+      ],
+      "xPublic": true,
+      "xRateLimit": "1000",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Capture customer lead (no OTP)",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/lead",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer lead capture",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/lead/otp/request",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify OTP and capture customer lead",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/lead/otp/verify",
+      "tags": [
+        "CustomerLead"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/search/mobile/request-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Request OTP for customer ID search",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/search/mobile/verify-otp",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer Details",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/verify",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Customer OTP",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/customer/verify-otp",
+      "tags": [
+        "CPC"
+      ],
+      "xPublic": true,
+      "xRateLimit": "10",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Send Generic OTP",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/otp/send",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "Verify Generic OTP",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/otp/verify",
+      "tags": [
+        "PolicyMapping"
+      ],
+      "xPublic": true,
+      "xRateLimit": "5",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [
+        "otp"
+      ],
+      "queryOptional": [
+        "mobile_number",
+        "request_id",
+        "user_id"
+      ],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    },
+    {
+      "service": "crm-pliportal-backend",
+      "name": "PMTGW Payment Callback",
+      "operationId": null,
+      "method": "POST",
+      "path": "/becrmpliportal/v1/payment/callback",
+      "tags": [
+        "Payment"
+      ],
+      "xPublic": true,
+      "xRateLimit": "1000",
+      "xTokenRequired": false,
+      "pathParams": [],
+      "queryRequired": [],
+      "queryOptional": [],
+      "hasRequestBody": true,
+      "expectedStatus": 200,
+      "defaultBody": {},
+      "enabled": false,
+      "disabledReason": "POST deferred until payloads provided"
+    }
+  ]
+}

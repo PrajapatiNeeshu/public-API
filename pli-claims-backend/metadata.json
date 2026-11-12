@@ -1,0 +1,11 @@
+{
+  "app": "pli-claims-backend",
+  "source_project": "pli/pli-claims-backend",
+  "source_branch": "release",
+  "source_commit": "c466603889a475aaa3a824604c2b02cdd4bbddec",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/pli-claims-backend/-/pipelines/9824"
+}

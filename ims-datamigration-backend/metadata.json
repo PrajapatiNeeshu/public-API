@@ -1,0 +1,11 @@
+{
+  "app": "ims-datamigration-backend",
+  "source_project": "pli/ims-datamigration-backend",
+  "source_branch": "release",
+  "source_commit": "70a34ffd0d93d3d98d0308e85ec8df0bfcc4cb32",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/ims-datamigration-backend/-/pipelines/9888"
+}

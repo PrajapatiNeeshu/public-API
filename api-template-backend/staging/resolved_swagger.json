@@ -1,0 +1,1094 @@
+{
+  "components": {
+    "schemas": {
+      "APIErrorResponse": {
+        "properties": {
+          "error": {
+            "properties": {
+              "code": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "field_errors": {
+                "items": {
+                  "properties": {
+                    "field": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "id": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "default": false,
+            "example": false,
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "AppError": {
+        "properties": {
+          "code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "field_errors": {
+            "items": {
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "BodyRequest": {
+        "properties": {
+          "emp_id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "emp_id",
+          "message"
+        ],
+        "type": "object"
+      },
+      "BodyResponse": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "CreateUserRequest": {
+        "properties": {
+          "age": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "city": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "emp_id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "age",
+          "city",
+          "email",
+          "emp_id"
+        ],
+        "type": "object"
+      },
+      "FieldError": {
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "value": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "ProductsViewResponse": {
+        "properties": {
+          "data": {
+            "items": {
+              "format": "uint8",
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "returned_records_count": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "total_records_count": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "StatusCodeAndMessage": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "UserCreateResponse": {
+        "properties": {
+          "data": {
+            "properties": {
+              "age": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "city": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "id": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "last_name": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "UserResponse": {
+        "properties": {
+          "age": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "city": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "last_name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "stackFrame": {
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "function": {
+            "type": "string"
+          },
+          "function_pointer": {
+            "format": "uint64",
+            "type": "integer"
+          },
+          "line": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "pointer": {
+            "format": "uint64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "stackTrace": {
+        "properties": {
+          "frames": {
+            "items": {
+              "properties": {
+                "file": {
+                  "type": "string"
+                },
+                "function": {
+                  "type": "string"
+                },
+                "function_pointer": {
+                  "format": "uint64",
+                  "type": "integer"
+                },
+                "line": {
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "pointer": {
+                  "format": "uint64",
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "statusCodeAndMessage": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "success": {
+            "default": false,
+            "example": false,
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "contact": {
+      "email": "test@gmail.com"
+    },
+    "description": "test service",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "termsOfService": "https://example.com/terms",
+    "title": "go-pis",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/v1/body": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "emp_id": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "emp_id",
+                  "message"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true,
+          "x-originalParamName": "body"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Successful Operation",
+                  "status_code": 200,
+                  "success": true
+                },
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "properties": {
+                        "message": {
+                          "type": "string"
+                        },
+                        "status_code": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "success": {
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "message": {
+                      "example": "success",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": true,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "400",
+                    "id": "ERR-400",
+                    "message": "bad request"
+                  },
+                  "message": "Bad Request",
+                  "status_code": 400,
+                  "success": false
+                },
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "code": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "field_errors": {
+                          "items": {
+                            "properties": {
+                              "field": {
+                                "type": "string"
+                              },
+                              "message": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "status_code": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "success": {
+                      "default": false,
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "401",
+                    "id": "ERR-401",
+                    "message": "unauthorized"
+                  },
+                  "message": "Unauthorized",
+                  "status_code": 401,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "403",
+                    "id": "ERR-403",
+                    "message": "forbidden"
+                  },
+                  "message": "Forbidden",
+                  "status_code": 403,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "404",
+                    "id": "ERR-404",
+                    "message": "not found"
+                  },
+                  "message": "Not Found",
+                  "status_code": 404,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "422",
+                    "field_errors": [
+                      {
+                        "field": "string",
+                        "message": "string",
+                        "value": ""
+                      }
+                    ],
+                    "message": "validation error"
+                  },
+                  "message": "Validation Error",
+                  "status_code": 422,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "500",
+                    "id": "ERR-500",
+                    "message": "internal server error"
+                  },
+                  "message": "Internal Server Error",
+                  "status_code": 500,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Log Body",
+        "tags": [
+          "Users"
+        ],
+        "x-public": false
+      }
+    },
+    "/v1/products-view": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-originalParamName": "body"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    0
+                  ],
+                  "limit": 0,
+                  "message": "Successful Operation",
+                  "returned_records_count": 0,
+                  "status_code": 200,
+                  "success": true,
+                  "total_records_count": 0
+                },
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "format": "uint8",
+                            "type": "integer"
+                          },
+                          "type": "array"
+                        },
+                        "limit": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "returned_records_count": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "status_code": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "success": {
+                          "type": "boolean"
+                        },
+                        "total_records_count": {
+                          "format": "int64",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "message": {
+                      "example": "success",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": true,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "400",
+                    "id": "ERR-400",
+                    "message": "bad request"
+                  },
+                  "message": "Bad Request",
+                  "status_code": 400,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "401",
+                    "id": "ERR-401",
+                    "message": "unauthorized"
+                  },
+                  "message": "Unauthorized",
+                  "status_code": 401,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "403",
+                    "id": "ERR-403",
+                    "message": "forbidden"
+                  },
+                  "message": "Forbidden",
+                  "status_code": 403,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "404",
+                    "id": "ERR-404",
+                    "message": "not found"
+                  },
+                  "message": "Not Found",
+                  "status_code": 404,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "422",
+                    "field_errors": [
+                      {
+                        "field": "string",
+                        "message": "string",
+                        "value": ""
+                      }
+                    ],
+                    "message": "validation error"
+                  },
+                  "message": "Validation Error",
+                  "status_code": 422,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "500",
+                    "id": "ERR-500",
+                    "message": "internal server error"
+                  },
+                  "message": "Internal Server Error",
+                  "status_code": 500,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Products View",
+        "tags": [
+          "Users"
+        ],
+        "x-public": false
+      }
+    },
+    "/v1/users": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "age": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "emp_id": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "age",
+                  "city",
+                  "email",
+                  "emp_id"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true,
+          "x-originalParamName": "body"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "age": 0,
+                    "city": "string",
+                    "email": "string",
+                    "first_name": "string",
+                    "id": 0,
+                    "last_name": "string"
+                  },
+                  "message": "Successful Operation",
+                  "status_code": 200,
+                  "success": true
+                },
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "properties": {
+                        "data": {
+                          "properties": {
+                            "age": {
+                              "format": "int64",
+                              "type": "integer"
+                            },
+                            "city": {
+                              "type": "string"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "first_name": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "format": "int64",
+                              "type": "integer"
+                            },
+                            "last_name": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "status_code": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "success": {
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "message": {
+                      "example": "success",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": true,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "400",
+                    "id": "ERR-400",
+                    "message": "bad request"
+                  },
+                  "message": "Bad Request",
+                  "status_code": 400,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "401",
+                    "id": "ERR-401",
+                    "message": "unauthorized"
+                  },
+                  "message": "Unauthorized",
+                  "status_code": 401,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "403",
+                    "id": "ERR-403",
+                    "message": "forbidden"
+                  },
+                  "message": "Forbidden",
+                  "status_code": 403,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "404",
+                    "id": "ERR-404",
+                    "message": "not found"
+                  },
+                  "message": "Not Found",
+                  "status_code": 404,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "422",
+                    "field_errors": [
+                      {
+                        "field": "string",
+                        "message": "string",
+                        "value": ""
+                      }
+                    ],
+                    "message": "validation error"
+                  },
+                  "message": "Validation Error",
+                  "status_code": 422,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Validation Error"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": {
+                    "code": "500",
+                    "id": "ERR-500",
+                    "message": "internal server error"
+                  },
+                  "message": "Internal Server Error",
+                  "status_code": 500,
+                  "success": false
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/APIErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Create User",
+        "tags": [
+          "Users"
+        ],
+        "x-dependencies": [
+          {
+            "description": "Validates the city/pincode supplied on the user",
+            "method": "GET",
+            "name": "pincode-service",
+            "type": "internal",
+            "url": "bepolicy/v1/pincodeimsstg/{pincode}"
+          },
+          {
+            "description": "Verifies the user identity before the record is created",
+            "method": "POST",
+            "name": "Aadhaar eKYC",
+            "type": "external",
+            "url": "https://api.uidai.gov.in/ekyc"
+          }
+        ],
+        "x-public": false,
+        "x-rate-limit": "10"
+      }
+    }
+  }
+}

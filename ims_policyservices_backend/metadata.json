@@ -1,0 +1,11 @@
+{
+  "app": "ims_policyservices_backend",
+  "source_project": "pli/ims_policyservices_backend",
+  "source_branch": "release",
+  "source_commit": "b8cd542720d2f32ccbd93610d6ddd8cad6462da7",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/ims_policyservices_backend/-/pipelines/9925"
+}

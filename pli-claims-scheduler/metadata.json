@@ -1,0 +1,8 @@
+{
+  "app": "pli-claims-scheduler",
+  "source_project": "pli/pli-claims-scheduler",
+  "source_branch": "release",
+  "source_commit": "0b4217af17160cfc5bbdbf3344fbbef27269056a",
+  "swagger_env": "ims-stg",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/pli-claims-scheduler/-/pipelines/6842"
+}

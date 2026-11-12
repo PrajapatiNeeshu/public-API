@@ -1,0 +1,110 @@
+[
+  {
+    "service": "crm-pliportal-backend",
+    "path": "/becrmpliportal/v1/ap/cpc/applications"
+  },
+  {
+    "service": "crm-pliportal-backend",
+    "path": "/becrmpliportal/v1/ap/deductor/by-office"
+  },
+  {
+    "service": "crm-pliportal-backend",
+    "path": "/becrmpliportal/v1/ap/documents/ecms-list"
+  },
+  {
+    "service": "ims-collections-backend",
+    "path": "/beimscollections/v1/accounting/calculate-payout-tds"
+  },
+  {
+    "service": "ims-collections-backend",
+    "path": "/beimscollections/v1/accounting/journals"
+  },
+  {
+    "service": "ims-collections-backend",
+    "path": "/beimscollections/v1/accounting/ledger-entries"
+  },
+  {
+    "service": "ims-datamigration-backend",
+    "path": "/beimsdatamigration/v1/agents"
+  },
+  {
+    "service": "ims-datamigration-backend",
+    "path": "/beimsdatamigration/v1/agents/by-code"
+  },
+  {
+    "service": "ims-datamigration-backend",
+    "path": "/beimsdatamigration/v1/agents/by-coordinator/export"
+  },
+  {
+    "service": "ims-policyissue-backend",
+    "path": "/beimspolicyissue/v1/ap/appointments/bookings"
+  },
+  {
+    "service": "ims-policyissue-backend",
+    "path": "/beimspolicyissue/v1/ap/doctors"
+  },
+  {
+    "service": "ims-policyissue-backend",
+    "path": "/beimspolicyissue/v1/ap/documents/required-documents"
+  },
+  {
+    "service": "ims_policymgmt_backend",
+    "path": "/api/v1/assignments/request/assignment-details"
+  },
+  {
+    "service": "ims_policymgmt_backend",
+    "path": "/v1/common/notification-log"
+  },
+  {
+    "service": "ims_policymgmt_backend",
+    "path": "/v1/lookups/disbursement-methods"
+  },
+  {
+    "service": "ims_policyservices_backend",
+    "path": "/api/v1/loans/approval-queue"
+  },
+  {
+    "service": "ims_policyservices_backend",
+    "path": "/api/v1/loans/default-monitor"
+  },
+  {
+    "service": "ims_policyservices_backend",
+    "path": "/api/v1/loans/pending-approval-queue"
+  },
+  {
+    "service": "pli-claims-backend",
+    "path": "/bepliclaims/v1/ap/claims/claims/claim-settlement/status"
+  },
+  {
+    "service": "pli-claims-backend",
+    "path": "/bepliclaims/v1/ap/claims/claims/survival-benefit/next-due-installment"
+  },
+  {
+    "service": "pli-claims-backend",
+    "path": "/bepliclaims/v1/claims/appeals/find-rejected-claim"
+  },
+  {
+    "service": "pliagent-backend",
+    "path": "/bepliagent/v1/agent-diary"
+  },
+  {
+    "service": "pliagent-backend",
+    "path": "/bepliagent/v1/agent-type-change-requests"
+  },
+  {
+    "service": "pliagent-backend",
+    "path": "/bepliagent/v1/agent-types"
+  },
+  {
+    "service": "pliproductmaster-backend",
+    "path": "/bepliprodmaster/v1/ap/productsView"
+  },
+  {
+    "service": "pliproductmaster-backend",
+    "path": "/bepliprodmaster/v1/bonus-rates/pending"
+  },
+  {
+    "service": "pliproductmaster-backend",
+    "path": "/bepliprodmaster/v1/cg/productsView"
+  }
+]

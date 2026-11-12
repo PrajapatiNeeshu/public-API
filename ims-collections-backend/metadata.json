@@ -1,0 +1,11 @@
+{
+  "app": "ims-collections-backend",
+  "source_project": "pli/ims-collections-backend",
+  "source_branch": "release",
+  "source_commit": "0f4e97465d3fcf4d9faed15b3c8bf7b6ed8636b1",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/ims-collections-backend/-/pipelines/9785"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "pli-ims-performance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple K6 performance tests for PLI/IMS GET APIs",
+  "scripts": {
+    "test:once:staging": "node performance/run-once-node.js staging",
+    "test:once:staging:k6": "node performance/run.js staging once",
+    "test:agents:once": "node performance/run-agents.js staging once",
+    "test:agents:smoke": "node performance/run-agents.js staging smoke",
+    "test:agents:load": "node performance/run-agents.js staging load",
+    "test:agents:step": "node performance/run-agents.js staging load",
+    "test:crm:once": "node performance/run-crm-pliportal.js staging once",
+    "test:crm:smoke": "node performance/run-crm-pliportal.js staging smoke",
+    "test:crm:load": "node performance/run-crm-pliportal.js staging load",
+    "test:smoke:staging": "node performance/run.js staging smoke",
+    "test:baseline:staging": "node performance/run.js staging baseline",
+    "test:load:staging": "node performance/run.js staging load",
+    "test:stress:staging": "node performance/run.js staging stress",
+    "test:spike:staging": "node performance/run.js staging spike",
+    "test:soak:staging": "node performance/run.js staging soak",
+    "test:smoke:prod": "node performance/run.js prod smoke",
+    "test:load:prod": "node performance/run.js prod load",
+    "test:stress:prod": "node performance/run.js prod stress",
+    "test:spike:prod": "node performance/run.js prod spike",
+    "test:soak:prod": "node performance/run.js prod soak"
+  },
+  "devDependencies": {
+    "k6-modern-reporter": "^1.0.5"
+  }
+}

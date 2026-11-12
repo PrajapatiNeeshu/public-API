@@ -1,0 +1,22 @@
+{
+  "searchByName": {
+    "name": "Search Agents by name",
+    "service": "pliagent-backend",
+    "path": "/bepliagent/v1/agents/search?name=ajay"
+  },
+  "searchByAgentCode": {
+    "name": "Search Agents by agent_code",
+    "service": "pliagent-backend",
+    "pathTemplate": "/bepliagent/v1/agents/search?agent_code={agent_code}"
+  },
+  "keycloakIdentity": {
+    "name": "Get Agent Keycloak Identity",
+    "service": "pliagent-backend",
+    "pathTemplate": "/bepliagent/v1/agents/keycloak-identity/{agent_code}"
+  },
+  "fallbackAgentCodes": [
+    "DA00830328",
+    "DEEMP01378615",
+    "GDS01377909"
+  ]
+}

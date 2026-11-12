@@ -1,0 +1,11 @@
+{
+  "app": "crm-pliportal-backend",
+  "source_project": "pli/crm-pliportal-backend",
+  "source_branch": "release",
+  "source_commit": "3089dbfef3618531d9762c225aa1e4965b5152de",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/crm-pliportal-backend/-/pipelines/9904"
+}

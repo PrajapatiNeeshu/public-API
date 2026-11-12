@@ -1,0 +1,11 @@
+{
+  "app": "pliagent-backend",
+  "source_project": "pli/pliagent-backend",
+  "source_branch": "release",
+  "source_commit": "769e3982be44521c51ea0c2360856ff0aa4c284b",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/pliagent-backend/-/pipelines/9944"
+}

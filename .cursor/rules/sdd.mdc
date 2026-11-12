@@ -1,0 +1,30 @@
+---
+description: Spec-Driven Development — always follow docs/SDD.md; keep performance framework changes local
+alwaysApply: true
+---
+
+# SDD (mandatory)
+
+Before any change under `performance/`, `docs/`, or related scripts:
+
+1. **Follow** `docs/SDD.md` (source of truth).
+2. **Classify** the request using the module ownership map in `docs/SDD.md` §3.
+3. **Edit only owning files** for that concern. Do not refactor unrelated runners, reports, or docs.
+4. Prefer **config** (`*.env.json`, `apis*.json`) over code when possible.
+5. For non-trivial behavior, write a mini-spec using the template in `docs/SDD.md` §5 (save under `docs/specs/` when useful).
+6. Keep shared reporting in `performance/report-template.js` — do not fork HTML per runner.
+7. Preserve: health wait, think time, stop-on-fail, HTML+JSON reports, failure reasons on FAIL, prod `ALLOW_PROD_RUN` guard.
+8. Verify with the **smallest** scenario (`once` / `smoke` before full `load`).
+9. If the user asks for a whole-framework rewrite, confirm explicitly; default is **localized** change only.
+
+Do **not** expand scope. One request → one module (plus allowed shared-helper exception in SDD).
+
+## Add new API (func + perf)
+
+If the user adds or provides a new API:
+
+1. Use `docs/API_DETAILS_TEMPLATE.md` (fill missing fields / state assumptions).
+2. Follow `docs/MASTER_PROMPT_ADD_NEW_API.md` — create **Functional + Performance** support (not functional-only).
+3. Reuse this repo’s stack (Node/`apis*.json`/k6/`report-template.js`); do not invent Locust/JMeter unless asked.
+4. Output the mandatory summary table (Created / Updated / Reason / Impact).
+5. Still obey ownership map — do not modify unrelated APIs or rewrite the framework.

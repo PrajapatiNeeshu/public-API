@@ -1,0 +1,9 @@
+node_modules/
+performance/reports/staging/*
+performance/reports/prod/*
+!performance/reports/staging/.gitkeep
+!performance/reports/prod/.gitkeep
+performance/staging.env.json
+performance/prod.env.json
+Thumbs.db
+.DS_Store

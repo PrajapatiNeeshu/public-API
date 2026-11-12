@@ -1,0 +1,11 @@
+{
+  "app": "api-template-backend",
+  "source_project": "pli/api-template-backend",
+  "source_branch": "release",
+  "source_commit": "1386a64a6aa7b00a276d5634251eb5be815ae634",
+  "production_config": "prod",
+  "production_folder": "prod",
+  "staging_config": "ims-stg",
+  "staging_folder": "staging",
+  "pipeline_url": "https://gitlab.cept.gov.in/pli/api-template-backend/-/pipelines/9722"
+}
